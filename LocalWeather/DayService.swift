@@ -20,9 +20,10 @@ struct Days {
 
 struct DayService {
     
-    static func getEarlyDayScreen() -> (text: String, image: String, backgroundName: String?) {
+    static func getEarlyDayScreen() -> (text: String, image: String, backgroundName: String?, author: String) {
         var text: String
         var image: String
+        var author: String = "Unknown"
         var backgroundName: String?
         let dayOfWeek: Int = getWeekDay(NSDate())
         println("DayOf Week: \(dayOfWeek)")
@@ -31,17 +32,18 @@ struct DayService {
         case Days.monday:
             println("Monday")
             image = "monday"
-            text = NSLocalizedString("Its monday baby! Stay healthy, avoid spiking blood sugar, stay away from the candy, and you will be fine.", comment: "")
+            text = NSLocalizedString("Always forgive your enemies; nothing annoys them so much.", comment: "")
+            author = "Oscar Wilde"
             backgroundName = "background3"
         case Days.tuesday:
             image = "tuesday"
-            text = NSLocalizedString("Its tuesday. There are always sales on candy. You will regret i badly", comment: "")
+            text = NSLocalizedString("Its tuesday. ", comment: "")
         case Days.wedensday:
             image = "wedensday"
-            text = NSLocalizedString("Sugar rush sugar crush... hope its not raining", comment: "")
+            text = NSLocalizedString("Hope its not raining", comment: "")
         case Days.thursday:
             image = "thursday"
-            text = NSLocalizedString("Its thursday! Stay healthy, avoid spiking blood sugar, stay away from the candy, and you will be fine.", comment: "")
+            text = NSLocalizedString("Its thursday!", comment: "")
             backgroundName = "background3"
         case Days.friday:
             image = "friday"
@@ -49,7 +51,7 @@ struct DayService {
             backgroundName = "background3"
         case Days.saturday:
             image = "saturday"
-            text = NSLocalizedString("Today you´ll have MASSIVE cravings for candy! Can you stay away?", comment: "")
+            text = NSLocalizedString("Saturday awesomeness", comment: "")
             backgroundName = "background3"
         case Days.sunday:
             image = "sunday"
@@ -60,13 +62,14 @@ struct DayService {
             fatalError("No matching weekday found")
         }
         
-        return(image: image, text: text, backgroundName: backgroundName)
+        return(image: image, text: text, backgroundName: backgroundName, author: author)
     }
     
-    static func getLateDayScreen() -> (text: String, image: String, backgroundName: String?) {
+    static func getLateDayScreen() -> (text: String, image: String, backgroundName: String?, author: String) {
         var text: String
         var image: String
         var backgroundName: String?
+        var author = "Unknown"
         let dayOfWeek: Int = getWeekDay(NSDate())
         
         switch dayOfWeek {
@@ -96,7 +99,7 @@ struct DayService {
             fatalError("No matching weekday found")
         }
         
-        return(image: image, text: text, backgroundName: backgroundName)
+        return(image: image, text: text, backgroundName: backgroundName, author: author)
     }
     
     static func getWeekDay(date: NSDate) -> Int {

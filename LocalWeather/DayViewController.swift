@@ -20,6 +20,7 @@ class DayViewController: UIViewController, WeatherServiceDelegate, CLLocationMan
     @IBOutlet weak var mainWeatherImage: UIImageView!
     @IBOutlet weak var mainText: UILabel!
 
+    @IBOutlet weak var authorName: UILabel!
     @IBAction func interactionButtonPressed(sender: UIButton) {
         println("Interaction button pressed")
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -120,33 +121,37 @@ class DayViewController: UIViewController, WeatherServiceDelegate, CLLocationMan
         })
     }
     
-    func updateView(imageName: String, text: String, backgroundName: String?) {
+    func updateView(imageName: String, text: String, backgroundName: String?, author: String) {
         headerImage.image = UIImage(named: imageName)
         mainText.text = text
+        authorName.text = author
     }
     
     func showEarlyDayScreen() {
         var text: String
         var image: String
+        var author: String
         var backgroundName: String?
 
         self.view.backgroundColor = UIColor(red: 6.0/255.0, green: 138.0/255.0, blue: 194.0/255.0, alpha: 0.5)
-
-        (text, image, backgroundName) = DayService.getEarlyDayScreen()
-        updateView(image, text: text, backgroundName: backgroundName)
+        mainText.textColor = UIColor.blackColor()
+        authorName.textColor = UIColor.blackColor()
+        (text, image, backgroundName, author) = DayService.getEarlyDayScreen()
+        updateView(image, text: text, backgroundName: backgroundName, author: author)
     }
     
     func showLateDayScreen() {
         var text: String
         var image: String
+        var author: String
         var backgroundName: String?
         
         self.view.backgroundColor = UIColor(red: 44.0/255.0, green: 62/255.0, blue: 80/255.0, alpha: 1)
         mainWeatherImage.image = UIImage(named: "moon")
         mainText.textColor = UIColor.whiteColor()
-        
-        (text, image, backgroundName) = DayService.getLateDayScreen()
-        updateView(image, text: text, backgroundName: backgroundName)
+        authorName.textColor = UIColor.whiteColor()
+        (text, image, backgroundName, author) = DayService.getLateDayScreen()
+        updateView(image, text: text, backgroundName: backgroundName, author: author)
     }
     
     func localWeather(weather: Weather, temp: Double) {
