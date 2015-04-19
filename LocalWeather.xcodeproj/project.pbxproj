@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		85151E291AE419760003B148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E281AE419760003B148 /* AppDelegate.swift */; };
-		85151E2B1AE419760003B148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E2A1AE419760003B148 /* ViewController.swift */; };
 		85151E2E1AE419760003B148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85151E2C1AE419760003B148 /* Main.storyboard */; };
 		85151E301AE419760003B148 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85151E2F1AE419760003B148 /* Images.xcassets */; };
 		85151E331AE419760003B148 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85151E311AE419760003B148 /* LaunchScreen.xib */; };
 		85151E3F1AE419760003B148 /* LocalWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E3E1AE419760003B148 /* LocalWeatherTests.swift */; };
+		85151E491AE419A80003B148 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85151E481AE419A80003B148 /* CoreLocation.framework */; };
+		85151E4E1AE41A650003B148 /* DayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E4A1AE41A650003B148 /* DayService.swift */; };
+		85151E4F1AE41A650003B148 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E4B1AE41A650003B148 /* DayViewController.swift */; };
+		85151E501AE41A650003B148 /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E4C1AE41A650003B148 /* RainView.swift */; };
+		85151E511AE41A650003B148 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85151E4D1AE41A650003B148 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +33,17 @@
 		85151E231AE419760003B148 /* LocalWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85151E271AE419760003B148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85151E281AE419760003B148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85151E2A1AE419760003B148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85151E2D1AE419760003B148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85151E2F1AE419760003B148 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		85151E321AE419760003B148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		85151E381AE419760003B148 /* LocalWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85151E3D1AE419760003B148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85151E3E1AE419760003B148 /* LocalWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherTests.swift; sourceTree = "<group>"; };
+		85151E481AE419A80003B148 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		85151E4A1AE41A650003B148 /* DayService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayService.swift; sourceTree = "<group>"; };
+		85151E4B1AE41A650003B148 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		85151E4C1AE41A650003B148 /* RainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
+		85151E4D1AE41A650003B148 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85151E491AE419A80003B148 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +68,7 @@
 		85151E1A1AE419760003B148 = {
 			isa = PBXGroup;
 			children = (
+				85151E481AE419A80003B148 /* CoreLocation.framework */,
 				85151E251AE419760003B148 /* LocalWeather */,
 				85151E3B1AE419760003B148 /* LocalWeatherTests */,
 				85151E241AE419760003B148 /* Products */,
@@ -78,7 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				85151E281AE419760003B148 /* AppDelegate.swift */,
-				85151E2A1AE419760003B148 /* ViewController.swift */,
+				85151E4A1AE41A650003B148 /* DayService.swift */,
+				85151E4B1AE41A650003B148 /* DayViewController.swift */,
+				85151E4C1AE41A650003B148 /* RainView.swift */,
+				85151E4D1AE41A650003B148 /* WeatherService.swift */,
 				85151E2C1AE419760003B148 /* Main.storyboard */,
 				85151E2F1AE419760003B148 /* Images.xcassets */,
 				85151E311AE419760003B148 /* LaunchScreen.xib */,
@@ -161,6 +174,7 @@
 				TargetAttributes = {
 					85151E221AE419760003B148 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = H8L8VRZJUX;
 					};
 					85151E371AE419760003B148 = {
 						CreatedOnToolsVersion = 6.3;
@@ -212,8 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85151E2B1AE419760003B148 /* ViewController.swift in Sources */,
+				85151E4E1AE41A650003B148 /* DayService.swift in Sources */,
+				85151E501AE41A650003B148 /* RainView.swift in Sources */,
 				85151E291AE419760003B148 /* AppDelegate.swift in Sources */,
+				85151E511AE41A650003B148 /* WeatherService.swift in Sources */,
+				85151E4F1AE41A650003B148 /* DayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LocalWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LocalWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
